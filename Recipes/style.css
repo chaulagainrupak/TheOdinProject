@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+*{
+    font-family: "Roboto", sans-serif;
+    overflow-x:  hidden;
+    margin: 0;
+    text-decoration: none;
+    color:#001011;
+    /* border: red 1px solid; */
+    
+
+}
+body{
+    background-color: #FFFFFC;
+}
+a{
+    margin: 0;
+    padding: 0;
+    
+}
+.hero{
+    height: 100vh;
+}
+
+.title{
+    margin-top: 50px;
+    text-align: center;
+    scale: 2;
+}
+
+.recipeList{
+
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.recipeTitle{
+    margin-top: 10px;
+}
+
+.recipeCard{
+    background-color: #f87575e9 !important;
+
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.recipeImage{
+    width: 90%;
+    max-height: 25vh;
+
+    margin: 10px;
+
+    border-radius: 20px;
+}
+
+.recipeButton{
+    cursor: pointer;
+    border: none;
+    background-color: #ffaf03de;
+
+    border-radius: 10px;
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+
+.acknowledgement{
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px){
+    .recipeList{
+        grid-template-columns: repeat(2, 1fr);
+    }        
+}
+
+
+@media only screen and (max-width: 400px){
+    .recipeList{
+        grid-template-columns: repeat(1, 1fr);
+    }        
+}
