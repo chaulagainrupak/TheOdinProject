@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+*{
+    font-family: "Roboto", sans-serif;
+    color: #1C1C1C;
+}
+
+.title{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}   
+footer,a{
+    text-align: center;
+    text-decoration: none;
+}
+
+footer{
+    margin-top: 10vh;
+}
+.link{
+    color: #21623e;
+}
+
+h1{
+    font-size: 60px;
+}
+
+@font-face {
+    font-family: 'SevenSeg';
+    src: url('SevenSeg.ttf');
+}
+.calcKeys{
+    width: 400px;
+    display: flex;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 96vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.display {
+    font-family: SevenSeg;
+    font-size: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #CFD7C7;
+    outline: 2px solid #1C1C1C;
+    height: 100px;
+    width: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.numpad{
+    width: 300px;
+    border: none;
+    background-color: #CFD7C7;
+}
+
+
+button{
+    font-size: x-large;
+    outline: 2px solid #1C1C1C;
+}
+#key_equal {
+    border:none;
+    background-color:#3CB371;
+}
+#key_operands{
+    border: none;
+    background-color: #3C91E6;
+}
+
+#key_AC, #key_DEL {
+    border: none;
+    background-color: #FF7F11;
+}
+
