@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --heroInfo-background: #c9c9c9; /* Light gray background with more contrast */
+    --primary-color: #84973D;
+    --secondary-color: #3b3b3b; /* Darker gray for better contrast */
+    --background-color: #FEF5F8;
+    --text-color: #1c1c1c1;
+    --input-background: #FFFFFF;
+    --input-border: #CCCCCC;
+    --input-invalid-border: #FF4D4D;
+    --button-background: #84973D;
+    --button-hover-background: #738230;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    margin: 0 !important;
+    background-color: var(--background-color);
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.heroInfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.heroText {
+    letter-spacing: -.5rem;
+    margin-left: 2rem;
+    font-size: 4rem;
+    line-height: 0;
+}
+
+.signupForm {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 40vh;
+    background-color: var(--heroInfo-background);
+}
+
+.signupForm > h1 {
+    margin-left: 2rem;
+}
+
+.signupForm > form {
+    background-color: transparent !important;
+    margin-left: 2rem;
+    display: flex;
+    width: 45%;
+    height: 65%;
+    justify-content: space-between;
+}
+
+.signupForm > form > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+.signupForm > form > div > input {
+    border-radius: 5px;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-background);
+    height: 2rem;
+    width: 150%;
+    padding: 0.5rem;
+}
+
+.signupForm > form > div > input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.signupForm > form > div > input:invalid {
+    outline: none;
+    border-color: var(--input-invalid-border);
+}
+
+.heroInfo > button {
+    margin: 2rem;
+    height: 4rem;
+    width: 12rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-background);
+    color: #fff;
+    cursor: pointer;
+}
+
+.heroInfo > button:hover {
+    background-color: var(--button-hover-background);
+}
