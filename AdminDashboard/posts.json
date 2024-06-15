@@ -1,0 +1,41 @@
+{
+    "posts": [
+      {
+        "title": "Project: Online Marketplace",
+        "date": "2024-06-08",
+        "description": "An online marketplace where users can buy and sell goods. Implements user authentication, product listings with categories, search functionality, and secure payment processing.",
+        "reactions": ["star.svg", "tick.svg", "delete.svg"]
+      },
+      {
+        "title": "Project: Task Management App",
+        "date": "2024-06-09",
+        "description": "A task management application for organizing personal and team tasks. Features include task creation, assignment, priority settings, due dates, and progress tracking.",
+        "reactions": ["star.svg", "tick.svg", "delete.svg"]
+      },
+      {
+        "title": "Project: Social Media Platform",
+        "date": "2024-06-10",
+        "description": "A social media platform allowing users to create profiles, post updates, follow others, and engage in discussions. Includes notifications, messaging, and content moderation.",
+        "reactions": ["star.svg", "tick.svg", "delete.svg"]
+      },
+      {
+        "title": "Project: Fitness Tracker",
+        "date": "2024-06-11",
+        "description": "A fitness tracking application to log workouts, set fitness goals, track progress, and provide insights. Integrates with wearable devices and provides analytics.",
+        "reactions": ["star.svg", "tick.svg", "delete.svg"]
+      },
+      {
+        "title": "Project: E-Learning Platform",
+        "date": "2024-06-12",
+        "description": "An e-learning platform offering courses, quizzes, and certifications. Supports user enrollment, progress tracking, course completion certificates, and course reviews.",
+        "reactions": ["star.svg", "tick.svg", "delete.svg"]
+      },
+      {
+        "title": "Project: Event Management System",
+        "date": "2024-06-13",
+        "description": "An event management system to organize and manage events, including scheduling, attendee registration, ticketing, venue management, and event analytics.",
+        "reactions": ["star.svg", "tick.svg", "delete.svg"]
+      }
+    ]
+  }
+  

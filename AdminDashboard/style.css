@@ -6,7 +6,10 @@
     --dash-nav-background-color: #ffffff;
     --dash-content-background-color: #F5F5F5;
     --nav-background-color:#3CB371;
-    --search-background-color: #e9ecef
+    --search-background-color: #e9ecef;
+    --card-background-color: #E5E4E2;
+    --card-sidebar-color: #00A550;
+    --announcement-underline-color:#F5F5F5;
 }
 
 * {
@@ -44,10 +47,6 @@ body{
 
 .navBar > div:hover {
     scale: 1.05;
-}
-
-.dashContent{
-    background-color: var(--dash-content-background-color);
 }
 
 .dashPanel{
@@ -153,4 +152,101 @@ body{
 
 .siteActions > button:hover {
     scale: 1.05;
+}
+
+.dashContent{
+    background-color: var(--dash-content-background-color);
+    display: grid;
+    grid-template-columns: 75fr 25fr;
+}
+
+
+
+.sidebar{
+    display: grid;
+    grid-template-rows: 50fr 50fr;
+}
+
+
+
+.posts {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 100fr);
+    grid-template-rows: 1fr 1fr;
+
+}
+.card {
+    width: calc(0.2 * 100vw);
+    background-color: var(--card-background-color);
+    margin: .5rem;
+
+    border-radius: 1rem;
+
+    display: flex;
+}
+
+.cardContent{
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cardContent > h5 {
+    margin-top: 0;
+}
+.cardDesc{
+    margin-top: -20px;
+    line-height: 1.2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;   
+    height: 60%;
+}
+
+.sideCard{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    width: 5%;
+    background-color: var(--card-sidebar-color);
+}
+
+.reactions{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.reactions > img{
+    height: 2rem;
+    width: 2rem;
+    margin: 0.2rem;
+}
+
+.reactions > img:hover{
+    scale: 1.05;
+}
+
+.announcements,.trending {
+    margin: 2%;
+    padding: 2%;
+    display: grid;
+    grid-template-rows: 8% repeat(3, 6rem);
+    background-color: var(--card-background-color);
+    border-radius: 1rem;
+
+    overflow: hidden;
+}
+.announcements > h1 ,.trending > h1 {
+    line-height: 0px;
+    margin-bottom: 0;
+}
+.announcements > div , .trending > div {
+    align-content: center;
+    margin-top: 0px;
+    margin-bottom: -10px;
+    border-bottom: 2px solid var(--card-sidebar-color);
 }

@@ -1,0 +1,17 @@
+{
+    "announcements": [
+      {
+        "title": "Site Maintenance",
+        "description": "The site will be down from x to y for the regular maintenance and up keeping of the website."
+      },
+      {
+        "title": "New Feature Launch",
+        "description": "Introducing a new feature that enhances user experience and functionality."
+      },
+      {
+        "title": "Upcoming Event",
+        "description": "Join us for the annual conference on z date. Register now!"
+      }
+    ]
+  }
+  
