@@ -1,8 +1,9 @@
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException
 import subprocess
 import requests
 from dotenv import load_dotenv
 import os
+from datetime import datetime
 
 # Load environment variables from .env file located one directory up
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
@@ -14,23 +15,15 @@ telegram_chat_id = os.getenv('TELEGRAM_CHAT_ID')
 app = FastAPI()
 
 @app.post('/github-webhook')
-async def github_webhook(request: Request):
-    data = await request.json()
-
-    # Check if the event is a push to the repository
-    if 'ref' in data and 'repository' in data and 'pusher' in data:
-        repo_name = data['repository']['name']
-        pusher_name = data['pusher']['name']
-
-        # Perform git pull in the current directory
-        try:
-            subprocess.run(['git', 'pull'], check=True)
-            send_telegram_message(f"Repository '{repo_name}' updated by {pusher_name}!")
-            return {'message': 'Update successful'}
-        except subprocess.CalledProcessError as e:
-            raise HTTPException(status_code=500, detail=f'Error executing git pull: {e}')
-    else:
-        return {'message': 'No action taken'}
+async def github_webhook():
+    # Perform git pull in the current directory
+    try:
+        subprocess.run(['git', 'pull'], check=True)
+        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        send_telegram_message(f"Git pull executed at {current_time}")
+        return {'message': 'Git pull successful'}
+    except subprocess.CalledProcessError as e:
+        raise HTTPException(status_code=500, detail=f'Error executing git pull: {e}')
 
 def send_telegram_message(message):
     url = f'https://api.telegram.org/bot{telegram_bot_token}/sendMessage'
