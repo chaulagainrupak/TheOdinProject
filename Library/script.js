@@ -17,8 +17,9 @@ function books(name, author, pages, read){
 }
 
 
-const book = new books('book', 'writer', 69, true)
+let book = new books('book', 'writer', 69, true)
 
 book.info();
 
+console.log(books.prototype);
 console.log(Object.getPrototypeOf(book) === books.prototype);
