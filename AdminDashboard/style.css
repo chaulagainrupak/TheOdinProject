@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --text-color: #010B13;
+    --special-text-color: #ffffff;
+    --dash-nav-background-color: #ffffff;
+    --dash-content-background-color: #F5F5F5;
+    --nav-background-color:#3CB371;
+    --search-background-color: #e9ecef
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--dash-content-background-color);
+    display: flex;
+}
+
+.hero{
+    display: grid;
+
+
+    grid-template-rows: 100vh;
+
+    grid-template-columns: 15fr 85fr;
+}
+
+.navBar{
+    width: 15vw;
+    background-color: var(--nav-background-color);
+    color: var(--special-text-color) !important;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.navBar > div > a {
+    color: var(--special-text-color) !important;
+}
+
+.navBar > div:hover {
+    scale: 1.05;
+}
+
+.dashContent{
+    background-color: var(--dash-content-background-color);
+}
+
+.dashPanel{
+    display: grid;
+    grid-template-rows: 25fr 75fr;
+}
+
+
+.dashNavBar{
+    background-color: var(--dash-nav-background-color);
+    filter: drop-shadow(0px 6px 8px #77767b);
+
+    display: grid;
+    grid-template-rows: 40% 60%;
+}
+
+.dashNavBar > .queries {
+    margin: 1.5%;
+    display: grid;
+    grid-template-columns: 75% 25% ;
+}
+
+ .search{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 3rem;
+}
+ .search > input{
+    width: 90%;
+    height: 60%;
+    background-color: var(--search-background-color);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+ .search > input:focus{
+    outline: none;
+}
+
+.userActions > p >img{
+    width: 2.5rem;
+    object-fit: contain;
+    border-radius: 100%;
+}
+
+.userActions > p > img:hover {
+    scale: 1.05;
+}
+.userActions > p {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.userdata {
+    display: flex;
+    margin: 1.5%;
+    justify-content: space-between;
+}
+
+.userdata > div {
+    align-self: center;
+}
+
+.username{
+    display: flex;
+}
+.username > div {
+    align-self: center;
+    line-height: 10px;
+    margin-left: 2%;
+}
+
+.username >  img{
+    width: 10%;
+    height: 10%;
+    border-radius: 100%;
+}
+
+.username > img:hover{
+    scale: 1.05;
+}
+.siteActions{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.siteActions > button {
+    font-size: 2rem;
+    border: none;
+    border-radius: 30px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: var(--nav-background-color);
+    color: var(--special-text-color);
+}
+
+.siteActions > button:hover {
+    scale: 1.05;
+}
