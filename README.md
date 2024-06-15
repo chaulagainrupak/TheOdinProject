@@ -8,3 +8,4 @@ The projects are being hosted using my own domain https://chaulagainrupak.com.np
 the `index.html` can be omitted 
 
 I also have added a method to scan for updates and send me a message in telegram.
+Everything should work now
