@@ -25,13 +25,11 @@ async def github_webhook():
     try:
         subprocess.run(['git', 'pull'], check=True)
         
-        # Assuming you want to track changes in Library/script.js
-        file_path = "Library/script.js"
-        lines_changed = count_lines_changed(file_path)
-        
+        changes_summary = get_git_changes_summary()
         current_time = get_kathmandu_time()
+        
         message = f"Git pull executed at {current_time}\n"
-        message += f"Changes in {file_path} | Lines changed: {lines_changed}"
+        message += changes_summary
         
         send_telegram_message(message)
         
@@ -39,14 +37,20 @@ async def github_webhook():
     except subprocess.CalledProcessError as e:
         raise HTTPException(status_code=500, detail=f'Error executing git pull: {e}')
 
-def count_lines_changed(file_path):
+def get_git_changes_summary():
     try:
-        result = subprocess.run(['git', 'diff', '--stat', 'HEAD^', 'HEAD', file_path], capture_output=True, text=True)
-        lines_changed = int(result.stdout.strip().split(' ')[-2])
-        return lines_changed
+        result = subprocess.run(['git', 'diff', '--stat', '--numstat', 'HEAD^', 'HEAD'], capture_output=True, text=True)
+        lines_changed = result.stdout.strip().split('\n')
+        
+        summary = ""
+        for line in lines_changed:
+            added, deleted, file_path = line.split('\t')
+            summary += f"{file_path.strip()} | +{added}, -{deleted}\n"
+        
+        return summary
     except Exception as e:
-        print(f"Error counting lines changed: {e}")
-        return 0
+        print(f"Error getting git changes summary: {e}")
+        return ""
 
 def send_telegram_message(message):
     url = f'https://api.telegram.org/bot{telegram_bot_token}/sendMessage'
