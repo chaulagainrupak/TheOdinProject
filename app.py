@@ -25,11 +25,10 @@ async def github_webhook():
     try:
         subprocess.run(['git', 'pull'], check=True)
         
-        changes_summary = get_git_changes_summary()
         current_time = get_kathmandu_time()
         
         message = f"Git pull executed at {current_time}\n"
-        message += changes_summary
+
         
         send_telegram_message(message)
         
@@ -37,20 +36,6 @@ async def github_webhook():
     except subprocess.CalledProcessError as e:
         raise HTTPException(status_code=500, detail=f'Error executing git pull: {e}')
 
-def get_git_changes_summary():
-    try:
-        result = subprocess.run(['git', 'diff', '--stat', '--numstat', 'HEAD^', 'HEAD'], capture_output=True, text=True)
-        lines_changed = result.stdout.strip().split('\n')
-        
-        summary = ""
-        for line in lines_changed:
-            added, deleted, file_path = line.split('\t')
-            summary += f"{file_path.strip()} | +{added}, -{deleted}\n"
-        
-        return summary
-    except Exception as e:
-        print(f"Error getting git changes summary: {e}")
-        return ""
 
 def send_telegram_message(message):
     url = f'https://api.telegram.org/bot{telegram_bot_token}/sendMessage'
@@ -61,7 +46,7 @@ def send_telegram_message(message):
     try:
         response = requests.post(url, json=payload)
         response.raise_for_status()
-        print(f"Telegram message sent: {response.json()}")
+        print(f"Telegram message sent successfully")
     except requests.exceptions.RequestException as e:
         print(f"Error sending Telegram message: {e}")
 
