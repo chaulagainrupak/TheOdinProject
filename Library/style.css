@@ -1,11 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: "Roboto", sans-serif;
+}
+
+
 
 body{
     height: 100vh;
     margin: 0;
 }
-.bookForm{
-    display: none;
+.bookForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; 
     flex-direction: column;
+
+    width: 250px;
+    font-size: 2rem;
+    background-color: red;
+    padding: 2rem;
+
+    text-align: center;
+
+    border-radius: 40px;
 }
 
+.bookForm > input {
+    height: 2rem;
+    border-radius: 10px;
+}
 
+.checkbox {
+    display: flex;
+    justify-content: space-evenly;
+}
+.checkbox > input {
+    scale: 2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bookForm > button, .addButton{
+    margin-top: .5rem;
+    height: 3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+.addButton{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

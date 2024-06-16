@@ -30,33 +30,21 @@ function Books(name, author, pages, read){
 }
 
 
-window.onload  = function  (){
 
-    book.info();
-    book.write();
-    console.log(myLibrary);
-
-
-    let div = document.querySelector('.books');
-    let newBook = document.createElement('div');
-
-
-
-    // newBook.textContent = myLibrary[0].name;
-    // div.appendChild(newBook);
-
-}
 
 
 
 let shown = false;
 let addBook= () => {
     let form = document.getElementById('bookForm');
+    let button = document.getElementById('addButton');
     if(!shown){
         form.style.display = 'flex';
+        button.style.display = 'none';
         shown = true;
     }else{
         form.style.display = 'none';
+        button.style.display = 'block';
         shown = false;
     }
 }
@@ -77,10 +65,24 @@ document.addEventListener('submit', function (event){
     document.getElementById('author').value = '';
     document.getElementById('pages').value = '';
     document.getElementById('read').checked = false;
+
+    displayBook();
 });
 
 
-function addBookToLibrary(name, author, pages, read) {
+let  addBookToLibrary = (name, author, pages, read) => {
     let book = new Books(name, author, pages, read);
     book.write();
 }
+
+let displayBook = () => {
+    let div = document.querySelector('.books');
+    div.innerHTML = ''; 
+
+    for (let i = 0; i < myLibrary.length; i++) {
+        let newBook = document.createElement('div');
+        newBook.classList.add('book');
+        newBook.textContent = myLibrary[i].name + ' by ' + myLibrary[i].author + ', ' + myLibrary[i].pages + ' pages, ' + (myLibrary[i].read ? 'read!' : 'not read yet!');
+        div.appendChild(newBook);
+    }
+};

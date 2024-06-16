@@ -8,7 +8,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <button onclick="addBook();" style="cursor: pointer;" class="addButton">Add A Book</button>
+    <button onclick="addBook();"  class="addButton" id ="addButton">Add A Book</button>
 
 
     <form class="bookForm" id="bookForm"> 
@@ -18,10 +18,15 @@
         <input type="text" name="bookAuthor" placeholder="Enter the author of the book:" id="author" required>
         <label for="pages">The Number Of Pages:</label>
         <input type="number" name="bookPages" placeholder="Enter the number of pages:" id="pages" required>
-        <label for="read">Read:</label>
-        <input type="checkbox" name="bookRead" id="read">
-
+        
+        <div class="checkbox">
+            <label for="read">Read:</label>
+            <input type="checkbox" name="bookRead" id="read">
+        </div>
+        
         <button type="submit">Add To Library</button>
+        
+        <button onclick="addBook();" class="cancelAdd"> Cancel </button>
     </form>
 
 
