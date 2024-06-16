@@ -13,7 +13,15 @@
 
     <form class="bookForm" id="bookForm"> 
         <label for="book">Book Name:</label>
-        <input type="text" name="book" placeholder="Enter the name of a book:" id="book">
+        <input type="text" name="book" placeholder="Enter the name of a book:" id="book" required>
+        <label for="author">Author's Name:</label>
+        <input type="text" name="bookAuthor" placeholder="Enter the author of the book:" id="author" required>
+        <label for="pages">The Number Of Pages:</label>
+        <input type="number" name="bookPages" placeholder="Enter the number of pages:" id="pages" required>
+        <label for="read">Read:</label>
+        <input type="checkbox" name="bookRead" id="read">
+
+        <button type="submit">Add To Library</button>
     </form>
 
 
