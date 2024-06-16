@@ -77,12 +77,33 @@ let  addBookToLibrary = (name, author, pages, read) => {
 
 let displayBook = () => {
     let div = document.querySelector('.books');
-    div.innerHTML = ''; 
+    div.innerHTML = '';
 
     for (let i = 0; i < myLibrary.length; i++) {
         let newBook = document.createElement('div');
-        newBook.classList.add('book');
-        newBook.textContent = myLibrary[i].name + ' by ' + myLibrary[i].author + ', ' + myLibrary[i].pages + ' pages, ' + (myLibrary[i].read ? 'read!' : 'not read yet!');
+        newBook.classList.add('card'); 
+
+        let textDiv = document.createElement('div');
+        textDiv.classList.add('text'); 
+
+        let title = document.createElement('h1');
+        title.textContent = myLibrary[i].name;
+
+        let author = document.createElement('h3');
+        author.textContent = myLibrary[i].author;
+
+        let pages = document.createElement('h4');
+        pages.textContent = 'Pages: ' + myLibrary[i].pages;
+
+        let readStatus = document.createElement('p');
+        readStatus.textContent = myLibrary[i].read ? 'read!' : 'not read yet!';
+
+        textDiv.appendChild(title);
+        textDiv.appendChild(author);
+        textDiv.appendChild(pages);
+        textDiv.appendChild(readStatus);
+
+        newBook.appendChild(textDiv);
         div.appendChild(newBook);
     }
 };
